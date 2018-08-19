@@ -7,7 +7,7 @@ export default class PAE {
     this.scale = new Scale(width, height);
   }
   pae(U) {
-    let U = this.scale.scale(U);
+    U = this.scale.scale(U);
     return this.apen.apen(U);
   }
 }

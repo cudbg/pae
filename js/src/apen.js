@@ -4,8 +4,8 @@ export default class ApEn {
     this.r = r;
   }
   apen(U) {
-    m = this.m;
-    r = this.r;
+    let m = this.m;
+    let r = this.r;
 
     var N = U.length;
 
@@ -18,23 +18,23 @@ export default class ApEn {
         }
       }
       return max;
-      //return max([abs(ua - va) for ua, va in zip(x_i, x_j)]);
+      // return max([abs(ua - va) for ua, va in zip(x_i, x_j)]);
     }
 
     function _phi(m) {
       var x = [];
-      for (var i=0; i<N-m+1; i++) {
-        var sub = [];
-        for (j=i; j<i+m; j++) {
+      for (let i=0; i<N-m+1; i++) {
+        let sub = [];
+        for (let j=i; j<i+m; j++) {
           sub.push(U[j]);
         }
         x.push(sub);
       }
 
       var C = [];
-      for (var i=0; i<x.length; i++) {
-        var sub = [];
-        for (var j=0; j<x.length; j++) {
+      for (let i=0; i<x.length; i++) {
+        let sub = [];
+        for (let j=0; j<x.length; j++) {
           if (_maxdist(x[i], x[j]) <= r) {
             sub.push(1);
           }
@@ -42,7 +42,7 @@ export default class ApEn {
         C.push(sub.length / (N - m + 1));
       }
       return (1/(N - m +1)) * C.map(Math.log)
-        .reduce(function(acc, val) {return acc + val;});
+        .reduce(function (acc, val) {return acc + val;});
     }
 
     return Math.abs(_phi(m + 1) - _phi(m));
