@@ -12,21 +12,21 @@ const expect = chai.expect;
 
 let lib;
 console.log(Scale);
-let scale = new Scale(8, 9);
+let scale = new Scale(2, 9);
 console.log(scale);
 let scaled = scale.scale([1,3,1]);
 console.log(scaled);
 
-//describe('Given Scale', () => {
-  //before(() => {
-    //lib = new Scale(8, 9);
-  //});
+describe('Given Scale', () => {
+  before(() => {
+    lib = new Scale(2, 9);
+  });
   //describe('when scaling', () => {
-    //it('should return correct scaled', () => {
-      //console.log('output:');
-      //console.log(lib.scale([1,2,1]));
-      //expect(lib.scale([1,3,1])).to.deep.equal([0., 2., 4., 6., 8., 6., 4., 2., 0.]);
-    //});
-  //});
-//});
+    it('should return correct scaled', () => {
+      console.log('output:');
+      console.log(lib.scale([1,2,1]));
+      expect(lib.scale([1,3,1])).to.deep.equal([0., 2., 4., 6., 8., 6., 4., 2., 0.]);
+    });
+   //});
+});
 

@@ -16,7 +16,6 @@ function interp(data, fitCount) {
     var atPoint = tmp - before;
 
     newData[i] = linearInterpolate(data[before], data[after], atPoint);
-    console.log(newData[i]);
   }
   newData[fitCount - 1] = data[data.length - 1]; // for new allocation
   return newData;
@@ -28,14 +27,11 @@ export default class Scale {
     this.height = height;
   }
   scale(y) {
-    console.log(y);
     let y2 = interp(y, this.width);
-    console.log(y2);
-    console.log(Math.min(...y2));
-    let y3 = y2 - Math.min(...y2);
-    console.log(y3);
-    let y4 = y3 * (this.height/Math.max(...y3));
-    console.log(y4);
+    let min = Math.min(...y2);
+    let y3 = y2.map(val => val - min);
+    let factor = this.height/Math.max(...y3);
+    let y4 = y3.map(val => val*factor);
 
     return y4;
   }
