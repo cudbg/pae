@@ -1,9 +1,9 @@
 import numpy as np
 
 
-class ApEn:
+class ApEnMeasure:
 
-    def __init__(self, m, r):
+    def __init__(self, m=2, r=20.0):
         self.m = m
         self.r = r
 
@@ -37,9 +37,9 @@ class ApEn:
         return abs(_phi(N, m + 1, r, x) - _phi(N, m, r, x))
 
 
-class Scale:
+class Scaler:
 
-    def __init__(self, h, w):
+    def __init__(self, w, h):
         self.h = h
         self.w = w
 
@@ -61,11 +61,11 @@ class Scale:
         return y4
 
 
-class PAE:
+class PAEMeasure:
 
-    def __init__(self, h, w, m=2, r=20.0):
-        self.scale = Scale(h, w)
-        self.apen = ApEn(m, r)
+    def __init__(self, w, h, m=2, r=20.0):
+        self.scale = Scaler(w, h)
+        self.apen = ApEnMeasure(m, r)
 
     def pae(self, x):
         x_scaled = self.scale.scale(x)
