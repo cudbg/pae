@@ -4,11 +4,13 @@ This repository shares implementations of Pixel Approximate Entropy, a visual co
 
 For an example of PAE, considering the two following charts.
 
-TODO put charts here
+![Alt](/docs/imgs/linear.png) ![Alt](/docs/imgs/noised.png)
 
-The one on the left, an increasing line, is intuitively simpler and easier to read. PAE can be used to determine this analytically: the chart on the right has a PAE of NNN, while the chart on the right has a PAE of NNN.
+The first chart, an increasing line, is intuitively simpler and easier to read. PAE can be used to determine this analytically: the first chart has a PAE of 0.003, while the second chart has a PAE of 0.913.
 
-We see PAE as a potentially useful tool in line chart recommendations and automatic simplification, since simplifying a chart will reduce its PAE. This can be seen in the following chart.
+We see PAE as a potentially useful tool in line chart recommendations and automatic simplification. For example, the second chart can smoothed to reduce its PAE to 0.253:
+
+![Alt](/docs/imgs/smoothed.png)
 
 
 We provide implementations of PAE in python and javascript.
