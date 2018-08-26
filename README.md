@@ -1,8 +1,8 @@
 # pae
 
-This repository shares implementations of Pixel Approximate Entropy, a visual complexity measure for estimating how easy line charts are to read presented in our recent IEEE InfoVIS 2018 paper [At a Glance: Pixel Approximate Entropy as a Measure of Line Chart Complexity](https://www.dropbox.com/s/9jipqhq1yqgn5yt/glance-infovis18-camera.pdf?dl=0). 
+This repository shares implementations of Pixel Approximate Entropy, a visual complexity measure for estimating how easy line charts are to read. A detailed description of our research is presented in our recent IEEE InfoVIS 2018 paper [At a Glance: Pixel Approximate Entropy as a Measure of Line Chart Complexity](https://www.dropbox.com/s/9jipqhq1yqgn5yt/glance-infovis18-camera.pdf?dl=0). 
 
-For example, considering the two following charts.
+For an example of PAE, considering the two following charts.
 
 TODO put charts here
 
@@ -22,10 +22,10 @@ pip install pae
 
 ```
 
-Once installed, the `PAEMeasure` class can be instantiated with the width and height of the chart in pixels. There are also parameters for the $m$ and $r$ parameters of ApEn that default to values in the paper of $2$ and $20.0$.
+Once installed, the `PAEMeasure` class can be instantiated with the width and height of the chart in pixels. There are also parameters for the _m_ and _r_ parameters of ApEn that default to values in the paper of _2_ and _20.0_.
 
 ```python
-from pae import PAEMeaure
+from pae import PAEMeasure
 
 pae_meas = PAEMeasure(300, 200)
 ```
