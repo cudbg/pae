@@ -30,7 +30,11 @@ export default class Scale {
     let y2 = interp(y, this.width);
     let min = Math.min(...y2);
     let y3 = y2.map(val => val - min);
-    let factor = this.height/Math.max(...y3);
+    let max = Math.max(...y3);
+    let factor = 1;
+    if (max) {
+        factor = this.height/max;
+    }
     let y4 = y3.map(val => val*factor);
 
     return y4;
