@@ -1,4 +1,4 @@
-# pae
+# Pixel Approximate Entropy
 
 This repository shares implementations of Pixel Approximate Entropy, a visual complexity measure for estimating how easy line charts are to read. A detailed description of our research is presented in our recent IEEE InfoVIS 2018 paper [At a Glance: Pixel Approximate Entropy as a Measure of Line Chart Complexity](https://www.dropbox.com/s/9jipqhq1yqgn5yt/glance-infovis18-camera.pdf?dl=0). 
 
@@ -15,7 +15,7 @@ We see PAE as a potentially useful tool in line chart recommendations and automa
 
 We provide implementations of PAE in python and javascript.
 
-## Python
+## Python Usage
 
 The python pae package can be installed with pip:
 
@@ -43,3 +43,4 @@ linear_chart = x*0.5 - 0.5
 print('PAE of chart is {}'.format(pae_meas.pae(linear_chart)))
 ```
 
+## Javascript Usage
