@@ -25,3 +25,9 @@ def test_complex():
 
     saved_complex_res = np.asscalar(np.load('test/complex_result.npy'))
     assert pae_meas.pae(complex_chart) == saved_complex_res
+
+if __name__ == "__main__":
+    print('test_linear')
+    test_linear()
+    print('test_complex')
+    test_complex()
