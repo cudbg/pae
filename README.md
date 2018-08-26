@@ -27,7 +27,7 @@ Once installed, the `PAEMeasure` class can be instantiated with the width and he
 ```python
 from pae import PAEMeasure
 
-pae_meas = PAEMeasure(300, 200)
+pae_meas = PAEMeasure(300, 200) # equivalent to: PAEMeasure(300, 200, m=2, r=20.0)
 ```
 
 The PAEMeasure class can then be used to evaluate the PAE of any one dimensional python list or numpy array with its given parameters.
