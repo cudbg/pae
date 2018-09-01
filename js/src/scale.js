@@ -8,7 +8,7 @@ function interp(data, fitCount) {
   var newData = [];
   var springFactor = (data.length - 1) / (fitCount - 1);
 
-  newData[0] = data[0]; 
+  newData[0] = data[0];
   for ( var i = 1; i < fitCount - 1; i++) {
     var tmp = i * springFactor;
     var before = Math.floor(tmp);
@@ -33,7 +33,7 @@ export default class Scale {
     let max = Math.max(...y3);
     let factor = 1;
     if (max) {
-        factor = this.height/max;
+      factor = this.height/max;
     }
     let y4 = y3.map(val => val*factor);
 

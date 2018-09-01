@@ -264,7 +264,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var PAE =
 /*#__PURE__*/
 function () {
-  function PAE(m, r, width, height) {
+  function PAE(width, height) {
+    var m = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2;
+    var r = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 20.0;
+
     _classCallCheck(this, PAE);
 
     this.apen = new _apen.default(m, r);
@@ -332,7 +335,6 @@ function interp(data, fitCount) {
     var after = Math.ceil(tmp);
     var atPoint = tmp - before;
     newData[i] = linearInterpolate(data[before], data[after], atPoint);
-    console.log(newData[i]);
   }
 
   newData[fitCount - 1] = data[data.length - 1]; // for new allocation
@@ -355,14 +357,21 @@ function () {
   _createClass(Scale, [{
     key: "scale",
     value: function scale(y) {
-      console.log(y);
       var y2 = interp(y, this.width);
-      console.log(y2);
-      console.log(Math.min.apply(Math, _toConsumableArray(y2)));
-      var y3 = y2 - Math.min.apply(Math, _toConsumableArray(y2));
-      console.log(y3);
-      var y4 = y3 * (this.height / Math.max.apply(Math, _toConsumableArray(y3)));
-      console.log(y4);
+      var min = Math.min.apply(Math, _toConsumableArray(y2));
+      var y3 = y2.map(function (val) {
+        return val - min;
+      });
+      var max = Math.max.apply(Math, _toConsumableArray(y3));
+      var factor = 1;
+
+      if (max) {
+        factor = this.height / max;
+      }
+
+      var y4 = y3.map(function (val) {
+        return val * factor;
+      });
       return y4;
     }
   }]);
