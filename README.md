@@ -44,3 +44,31 @@ print('PAE of chart is {}'.format(pae_meas.pae(linear_chart)))
 ```
 
 ## Javascript Usage
+
+The javascript package can be installed with npm:
+
+```sh
+npm i pae
+```
+
+Optionally use the `--save` option to add to `package.json` dependencies.
+
+The package can then be included in your `index.html` with:
+
+```html
+<script src="node_modules/pae/lib/pae.js"></script>
+```
+
+
+Alternately, you can just include `pae` from jsdelivr cdn:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/pae/lib/pae.js"></script>
+```
+
+Once you have included pae in your webpage, it can be used as follows:
+
+```js
+var pae_meas = new pae.PAE(300, 200);
+console.log(pae_meas.pae(data)); # data is javascript array of numbers
+```
