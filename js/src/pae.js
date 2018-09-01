@@ -2,7 +2,7 @@ import ApEn from './apen.js';
 import Scale from './scale.js';
 
 export default class PAE {
-  constructor(m, r, width, height) {
+  constructor(width, height, m=2, r=20.0) {
     this.apen = new ApEn(m, r);
     this.scale = new Scale(width, height);
   }
