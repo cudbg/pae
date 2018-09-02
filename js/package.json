@@ -1,8 +1,12 @@
 {
   "name": "pae",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Pixel Approximate Entropy javascript implmentation",
   "main": "lib/pae.js",
+  "files": [
+    "lib/*",
+    "../README.md"
+  ],
   "scripts": {
     "build": "webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
