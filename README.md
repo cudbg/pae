@@ -70,5 +70,5 @@ Once you have included pae in your webpage, it can be used as follows:
 
 ```js
 var pae_meas = new pae.PAE(300, 200);
-console.log(pae_meas.pae(data)); # data is javascript array of numbers
+console.log(pae_meas.pae(data)); // data is javascript array of numbers
 ```
