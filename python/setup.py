@@ -9,7 +9,7 @@ with open('../LICENSE') as f:
 
 setup(
     name='pae',
-    version='1.0.0',
+    version='1.2.0',
     description='Pixel Approximate Entropy',
     long_description=readme,
     long_description_content_type='text/markdown',
